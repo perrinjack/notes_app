@@ -9,5 +9,8 @@ function returnsText() {
   var text = note.receivesText();
   assert.isTrue(text === 'test note');
 }
+
+
+
 storesText();
 returnsText();
