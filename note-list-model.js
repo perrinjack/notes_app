@@ -9,8 +9,6 @@
   NoteList.prototype.addNote = function (string) {
     this.note = new Note(string);
     this._list.push(this.note);
-    return this.note;
-    
   };
 
   exports.NoteList = NoteList;

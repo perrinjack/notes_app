@@ -1,7 +1,6 @@
 function arraySetup() {
   var notelist;
   notelist = new NoteList();
-  // console.log(notelist._list)
   assert.isTrue(Array.isArray(notelist._list) === true);
   assert.isTrue(notelist._list.length === 0);
 }
@@ -15,13 +14,13 @@ function createsNote() {
 }
 
 function returnsNotes() {
-  var notelist1 = new NoteList();
-  var note1 = notelist1.addNote('Test');
-  var note2 = notelist1.addNote('second');
-  console.log(note1)
-  console.log(note2)
-  assert.isTrue(notelist1.returnList().includes(note1));
-  assert.isTrue(notelist1.returnList()[1] === note2);
+  var notelist = new NoteList();
+  var note1 = notelist.addNote('First');
+  var note2 = notelist.addNote('second');
+  assert.isTrue(notelist.returnList()[0] instanceof Note);
+  assert.isTrue(notelist.returnList()[1] instanceof Note);
+  assert.isTrue(notelist.returnList().length === 2);
+  assert.isTrue(typeof notelist.returnList()[0] === 'object');
 }
 
 arraySetup();
