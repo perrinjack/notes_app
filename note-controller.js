@@ -1,24 +1,30 @@
 (function (exports) {
   function NoteController(NoteList) {
     this.notelist = NoteList;
+    this.notelist.addNote('Beer');
+    this.view = new NoteListView(this.notelist);
   }
 
-  NoteController.prototype.addNoteToList = function () {
-    return this.notelist.addNote('Beer');
-  };
+  // NoteController.prototype.addNoteToList = function () {
+  //   return 
+  // };
 
-  NoteController.prototype.createView = function () {
-    var view = new NoteListView(this.notelist);
-  };
+  // NoteController.prototype.createView = function () {
+  //   var view = new NoteListView(this.notelist);
+  // };
+
   NoteController.prototype.renderHtml = function () {
     var test = document.getElementById('app');
-    test.innerHTML = view;
+    test.innerHTML = this.view.htmlWrap();
   };
 
-  exports.NoteController = NoteController;
+  document.addEventListener('DOMContentLoaded', function (event) {
+  var list = new NoteList();
+  var test = new NoteController(list);
+  test.renderHtml();
 });
-this;
 
-document.addEventListener('DOMContentLoaded', function (event) {
-  console.log(test);
-});
+  exports.NoteController = NoteController;
+
+});(this);
+
