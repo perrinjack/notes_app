@@ -5,7 +5,6 @@
 
   NoteListView.prototype.htmlWrap = function () {
     var text_array = this.noteList.returnList();
-    // var text_array = object_array.forEach(.receivesText())
     var html_array = ['<ul>'];
     var i;
     for (i = 0; i < text_array.length; i++) {
