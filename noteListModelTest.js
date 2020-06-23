@@ -23,6 +23,8 @@ function returnsNotes() {
   assert.isTrue(typeof notelist.returnList()[0] === 'object');
 }
 
+
+
 arraySetup();
 createsNote();
 returnsNotes();
