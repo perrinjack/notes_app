@@ -1,6 +1,6 @@
 (function (exports) {
-  function NoteListView() {
-    this.noteList = new NoteList();
+  function NoteListView(NoteList) {
+    this.noteList = NoteList;
   }
 
   NoteListView.prototype.htmlWrap = function () {
