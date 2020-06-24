@@ -13,6 +13,13 @@ function createsNote() {
   assert.isTrue(notelist._list.length === 1);
 }
 
+function idStartsAtZero() {
+  var notelist = new NoteList();
+  var text = 'Favourite drink: seltzer';
+  var noteText = notelist.addNote(text);
+  assert.isTrue(notelist._list[0].id === 0);
+}
+
 function returnsNotes() {
   var notelist = new NoteList();
   var note1 = notelist.addNote('First');
@@ -23,8 +30,7 @@ function returnsNotes() {
   assert.isTrue(typeof notelist.returnList()[0] === 'object');
 }
 
-
-
 arraySetup();
 createsNote();
 returnsNotes();
+idStartsAtZero();

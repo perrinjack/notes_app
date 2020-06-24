@@ -4,13 +4,15 @@
   }
 
   NoteListView.prototype.htmlWrap = function () {
-    var text_array = this.noteList.returnList();
+    var object_array = this.noteList.returnList();
     var html_array = ['<ul>'];
     var i;
-    for (i = 0; i < text_array.length; i++) {
-      html_array.push('<li><div>');
-      html_array.push(text_array[i].receivesText());
-      html_array.push('</div></li>');
+    for (i = 0; i < object_array.length; i++) {
+      html_array.push(
+        `<li><a href = #notes/${object_array[i].receivesId()}><div>`
+      );
+      html_array.push(object_array[i].receivesText());
+      html_array.push('</div></a></li>');
     }
     html_array.push('</ul>');
 

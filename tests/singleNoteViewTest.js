@@ -1,5 +1,5 @@
 function singleViewHtmlWrap() {
-    var note = new Note('Hot bloody day today');
+    var note = new Note('Hot bloody day today',3);
     var singlenoteview = new SingleNoteView(note);
  
     var text =
