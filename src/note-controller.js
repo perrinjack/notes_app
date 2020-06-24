@@ -1,7 +1,7 @@
 (function (exports) {
   function NoteController(NoteList) {
     this.notelist = NoteList;
-    this.notelist.addNote('Beer');
+    this.notelist.addNote('Beer Beer Beer Beer Beer');
     this.view = new NoteListView(this.notelist);
   }
 
@@ -13,8 +13,18 @@
   exports.NoteController = NoteController;
 })(this);
 
-document.addEventListener('DOMContentLoaded', function (event) {
-  var list = new NoteList();
-  var controller = new NoteController(list);
-  controller.renderHtml();
+  window.addEventListener('DOMContentLoaded', function (event) {
+    var list = new NoteList();
+    var controller = new NoteController(list);
+    controller.renderHtml();
+
+  window.addEventListener('hashchange', function (event) {
+    var id = window.location.hash.slice(-1)
+    var note = controller.notelist.returnList()[id]
+    var singleNoteView = new SingleNoteView(note)
+    var html = singleNoteView.htmlWrap()
+    this.document.getElementById('app').innerHTML = html
+  });
+  
 });
+
