@@ -11,13 +11,10 @@
   };
 
   exports.NoteController = NoteController;
-
 })(this);
 
-// document.addEventListener('DOMContentLoaded', function (event) {
-//   var list = new NoteList
-//   var controller = new NoteController(list)
-//   controller.renderHtml();
-//   });
-
-
+document.addEventListener('DOMContentLoaded', function (event) {
+  var list = new NoteList();
+  var controller = new NoteController(list);
+  controller.renderHtml();
+});
