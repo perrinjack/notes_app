@@ -11,7 +11,7 @@
       html_array.push(
         `<li><a href = #notes/${object_array[i].receivesId()}><div>`
       );
-      html_array.push(object_array[i].receivesText());
+      html_array.push(object_array[i].receivesText().slice(0, 20));
       html_array.push('</div></a></li>');
     }
     html_array.push('</ul>');

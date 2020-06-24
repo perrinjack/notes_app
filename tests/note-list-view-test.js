@@ -4,7 +4,7 @@ function htmlWrap() {
   var note1 = noteListView.noteList.addNote('First Note some more charecter');
   var note2 = noteListView.noteList.addNote('Second Note');
   var text =
-    '<ul><li><a href = #notes/0><div>First Note</div></a></li><li><a href = #notes/1><div>Second Note</div></a></li></ul>';
+    '<ul><li><a href = #notes/0><div>First Note some more</div></a></li><li><a href = #notes/1><div>Second Note</div></a></li></ul>';
   assert.isTrue(noteListView.htmlWrap() === text);
 }
 
