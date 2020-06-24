@@ -25,6 +25,10 @@
     var html = singleNoteView.htmlWrap()
     this.document.getElementById('app').innerHTML = html
   });
+
+  document.getElementById('for').onsubmit = function(submitEvent) {
+    submitEvent.preventDefault();
+  }
   
 });
 
