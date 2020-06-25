@@ -26,8 +26,9 @@
     this.document.getElementById('app').innerHTML = html
   });
 
-  document.getElementById('for').onsubmit = function(submitEvent) {
+  document.getElementById('form').onsubmit = function(submitEvent) {
     submitEvent.preventDefault();
+    console.log(document.getElementById('form').elements[0].value)
   }
   
 });
